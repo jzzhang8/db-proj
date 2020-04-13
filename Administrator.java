@@ -126,7 +126,7 @@ class Administrator {
 			String title = lineSplit[2];
 			String authors = lineSplit[3];
 			String publish = lineSplit[4]; // date for publish
-			PreparedStatement pstmt_book = con.prepareStatement("INSERT INTO book VALUES (?, ?, str_to_date(?, '%d/%m/%y'));");
+			PreparedStatement pstmt_book = con.prepareStatement("INSERT INTO book VALUES (?, ?, str_to_date(?, '%d/%m/%Y'));");
 			pstmt_book.setString(1,callnum);
 			pstmt_book.setString(2,title);
 			pstmt_book.setString(3,publish);
@@ -163,9 +163,9 @@ class Administrator {
 			// insert into borrow and copy
 			String borrow_str_after_setNull;
 			if(return_date.equals("null")){
-				borrow_str_after_setNull = "INSERT INTO borrow VALUES (?, ?, ?, str_to_date(?, '%d/%m/%y'), null);";
+				borrow_str_after_setNull = "INSERT INTO borrow VALUES (?, ?, ?, str_to_date(?, '%d/%m/%Y'), null);";
 			}else{
-				borrow_str_after_setNull = "INSERT INTO borrow VALUES (?, ?, ?, str_to_date(?, '%d/%m/%y'), str_to_date(?, '%d/%m/%y'));";
+				borrow_str_after_setNull = "INSERT INTO borrow VALUES (?, ?, ?, str_to_date(?, '%d/%m/%Y'), str_to_date(?, '%d/%m/%Y'));";
 			} 
 
 			PreparedStatement pstmt_borrow = con.prepareStatement(borrow_str_after_setNull);
