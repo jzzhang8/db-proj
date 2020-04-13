@@ -24,7 +24,7 @@ class Administrator {
 		ctable[1] = "CREATE TABLE libuser( libuid varchar(10) primary key, name varchar(25), address varchar(100), cid integer);";
 		ctable[2] = "CREATE TABLE book( callnum varchar(8) primary key, title varchar(30), publish date );";
 		ctable[3] = "CREATE TABLE copy( callnum varchar(8), copynum integer);";
-		ctable[4] = "CREATE TABLE borrow(libuid integer, callnum varchar(8), copynum integer, checkout date, return_date date);";
+		ctable[4] = "CREATE TABLE borrow(libuid varchar(10), callnum varchar(8), copynum integer, checkout date, return_date date);";
 		ctable[5] = "CREATE TABLE authorship(aname varchar(25), callnum varchar(8) );";
 
 		Statement stmt = con.createStatement();
