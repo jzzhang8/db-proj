@@ -152,7 +152,7 @@ class Administrator {
 
 		Scanner fcheck_out = new Scanner(new File("check_out.txt"));
 		while(fcheck_out.hasNextLine()){
-			String line = fbook.nextLine();
+			String line = fcheck_out.nextLine();
 			String[] lineSplit = line.split("\t");
 
 			String callnum = lineSplit[0];
