@@ -193,8 +193,8 @@ class Administrator {
 	public void showRecordNum() throws SQLException{
 
 		for(int i = 0; i < 6; i++){
-			PreparedStatement pstmt = con.prepareStatement("SELECT COUNT(*) FROM ?;");
-			pstmt.setString(1, tablenames[i]);
+			String pstr = String.format("SELECT COUNT(*) FROM %s;", tablenames[i])
+			PreparedStatement pstmt = con.prepareStatement(pstr);
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()){
 				int num = rs.getInt(1);
@@ -209,7 +209,7 @@ class Administrator {
 	public void operation() throws IOException, SQLException{
 		Scanner sc = new Scanner(System.in);
 
-		String menuInfo = "-----Operations for administrator menu-----\nWhat kinds of operation would you like to perform?\nq. Create all tables\n2. Delete all tables\n3. Load from datafile\n4. Show number of records in each table\n5. Return to the main menu\n"; 
+		String menuInfo = "-----Operations for administrator menu-----\nWhat kinds of operation would you like to perform?\n1. Create all tables\n2. Delete all tables\n3. Load from datafile\n4. Show number of records in each table\n5. Return to the main menu\n"; 
 
 		while(true){
 			System.out.print(menuInfo);
