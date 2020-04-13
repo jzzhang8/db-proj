@@ -193,7 +193,7 @@ class Administrator {
 	public void showRecordNum() throws SQLException{
 
 		for(int i = 0; i < 6; i++){
-			String pstr = String.format("SELECT COUNT(*) FROM %s;", tablenames[i])
+			String pstr = String.format("SELECT COUNT(*) FROM %s;", tablenames[i]);
 			PreparedStatement pstmt = con.prepareStatement(pstr);
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()){
