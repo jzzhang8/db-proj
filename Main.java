@@ -25,9 +25,9 @@ class Main {
         }
 
         Administrator admin = new Administrator(con);
-        //LibraryUser libusr = new LibraryUser(con);
-        //Librarian librarian = new Librarian(con);
-        //LibraryDirector libdir = new LibraryDirector(con);
+        // LibraryUser libusr = new LibraryUser(con);
+        // Librarian librarian = new Librarian(con);
+        // LibraryDirector libdir = new LibraryDirector(con);
 
         System.out.println("Welcome to library inquiry system!\n");
         String menuInfo = "-----Main menu-----\nWhat kinds of operation would you like to perform?\n1. Operations for administrator\n2. Operations for library user\n3. Operations for librarian\n4. Operations for library director\n5. Exit this program\n";
@@ -41,9 +41,9 @@ class Main {
             }else if(choice.equals("2")){
                 //libusr.operation();
             }else if(choice.equals("3")){
-              //  librarian.operation();
+                //librarian.operation();
             }else if(choice.equals("4")){
-            //    libdir.operation();
+                //libdir.operation();
             }else if(choice.equals("5")){
                 System.exit(0);
             }else{
